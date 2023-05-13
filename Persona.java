@@ -1,5 +1,7 @@
 package Tareas.Proyecto1;
 
+import Tareas.Proyecto1.Interfaz.Vehiculo;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -10,9 +12,11 @@ public class Persona {
     public String dptoResidencia;
     public byte cantHijos;
     public LocalDate fechaNacimiento;
+    public ArrayList<Vehiculo> listaVehiculos;
 
     //Constructors
-    public Persona (){};
+    public Persona (){}
+
     public Persona (int idPersona, String nombre, String apellido, String dptoResidencia, byte cantHijos, LocalDate fechaNacimiento){
         this.idPersona = idPersona;
         this.nombre = nombre;
@@ -69,17 +73,6 @@ public class Persona {
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
-    }
-
-    private ArrayList<Persona> listaPersonas = new ArrayList<Persona>();
-
-    //Metodos
-    public ArrayList<Persona> getListaPersonas() {
-        return listaPersonas;
-    }
-
-    public void agregarPersona(Persona persona) {
-        listaPersonas.add(persona);
     }
 
 

@@ -1,5 +1,6 @@
 package Tareas.Proyecto1.Interfaz;
 
+import Tareas.Proyecto1.GestionPersonas;
 import Tareas.Proyecto1.Persona;
 
 import javax.swing.*;
@@ -12,7 +13,7 @@ public class Menu extends JDialog {
     private JButton listarPersonasButton;
     private JPanel menu;
     private JButton agregarVehiculonButton;
-    private Persona personas = new Persona();
+    private GestionPersonas personas = new GestionPersonas();
     private Vehiculo vehiculo = new Vehiculo();
 
     //vehiculo
@@ -53,7 +54,5 @@ public class Menu extends JDialog {
 
     public static void main(String[] args) {
         Menu menu = new Menu(null);
-
     }
-
 }
