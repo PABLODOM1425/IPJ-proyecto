@@ -28,7 +28,9 @@ public class AgregarVehiculo {
     private JTextField textNombre;
     private JTextField textColor;
 
-    public class Tabla{
+
+
+    /*public class Tabla{
         DefaultTableModel dtm= new DefaultTableModel();
 
         public Tabla(){
@@ -53,8 +55,7 @@ public class AgregarVehiculo {
 
     }
 
-
-
+*/
 
     private static void init(JComboBox CmbVehiculos) {
 
@@ -82,23 +83,6 @@ public class AgregarVehiculo {
         });
 
 
-
-      /*  listarButton.addActionListener(new ActionListener() {
-           @Override
-            public void actionPerformed(ActionEvent e) {
-                public void actionPerformed(ActionEvent e){
-                    ListarVehiculo ListarVehiculo = new ListarVehiculo();
-
-                }
-                ;
-            }
-*/
-        /*public void VisibleText() {
-            String SelectCombo = (String) CmbVehiculos.getSelectedItem();
-            if (SelectCombo.equals("Avion")) {
-                System.out.println("Entro a avion");
-                agregarButton.enable();
-*/
         agregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -106,5 +90,5 @@ public class AgregarVehiculo {
             }
         });
     }
-        }
+}
 

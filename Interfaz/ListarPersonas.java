@@ -109,18 +109,40 @@ public class ListarPersonas extends JDialog {
 
     }
 
-    private Object[][] crearFilasPersonas(ArrayList<Persona> arrPersonas) {
-        Object[][] personas = new Object[arrPersonas.size()][6];
-        for (int i = 0; i < arrPersonas.size(); i++) {
-            Persona persona = arrPersonas.get(i);
-            personas[i][0] = i + 1; // ID
-            personas[i][1] = persona.getNombre();
-            personas[i][2] = persona.getApellido();
-            personas[i][3] = persona.getDptoResidencia();
-            personas[i][4] = persona.getCantHijos();
-            personas[i][5] = persona.getFechaNacimiento();
-        }
+    private ArrayList<Persona> filtrarPersonas(ArrayList<Persona> arrPersona, String filtro, String filtroOpcion) {
 
-        return personas;
+        ArrayList<Persona> personasFiltradas = new ArrayList<>();
+
+        for(Persona persona : arrPersona) {
+
+            switch (filtroOpcion) {
+                case "Nombre":
+                    if (persona.getNombre().equals(filtro))
+                        personasFiltradas.add(persona);
+                    break;
+                case "Apellido":
+                    if (persona.getApellido().equals(filtro))
+                        personasFiltradas.add(persona);
+
+                    break;
+                case "Departamento":
+                    if (persona.getDptoResidencia().equals(filtro))
+                        personasFiltradas.add(persona);
+
+                    break;
+                case "Cantidad de Hijos":
+                    byte bFiltro = Byte.parseByte(filtro);
+                    if (persona.getCantHijos() == bFiltro)
+                        personasFiltradas.add(persona);
+
+                    break;
+                case "Fecha de Nacimiento":
+                    if (persona.getFechaNacimiento().equals(filtro)) {
+                        personasFiltradas.add(persona);
+                        break;
+                    }
+            }
+        }
+        return personasFiltradas;
     }
 }
