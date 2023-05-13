@@ -104,9 +104,7 @@ public class ListarPersonas extends JDialog {
             personas = crearFilasPersonas(arrPersonas);
         }
 
-        tbListarPersonas.setModel(new DefaultTableModel(
-                personas,
-                new String[]{"Id","Nombre", "Apellido", "Departamento", "Cantidad de Hijos", "Fecha de Nacimiento"})
+        tbListarPersonas.setModel(new DefaultTableModel(personas, new String[]{"Id","Nombre", "Apellido", "Departamento", "Cantidad de Hijos", "Fecha de Nacimiento"})
         );
 
     }

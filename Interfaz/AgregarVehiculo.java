@@ -1,6 +1,7 @@
 package Tareas.Proyecto1.Interfaz;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,7 +10,7 @@ public class AgregarVehiculo {
     private JLabel LbnLongitud;
     private JLabel cantidadDePasajerosLabel;
     private JPanel PanelAgregarVehiculo;
-    private JTextField textField1;
+    private JTextField textLongitud;
     private JTextField textPasajeros;
     private JButton agregarButton;
     private JButton cancelarButton;
@@ -22,6 +23,35 @@ public class AgregarVehiculo {
     private JLabel LblMenuBarco;
     private JTextField TxtManga;
     private JComboBox CmbVehiculos;
+    private JTable tablaDatos;
+    private JLabel menuAvionLabel;
+    private JTextField textNombre;
+    private JTextField textColor;
+
+    public class Tabla{
+        DefaultTableModel dtm= new DefaultTableModel();
+
+        public Tabla(){
+            //initComponents();
+            String[] titulo=new String[]{"Id","Nombre", "Color", "Tipo"} ;
+            dtm.setColumnIdentifiers(titulo);
+            tablaDatos.setModel(dtm);
+
+        }
+        public void agregar(){
+            dtm.addRow(new Object[]{
+                    textNombre.getX(),
+                    textColor.getText(),
+                    (String)CmbVehiculos.getSelectedItem(),
+                    textLongitud.getText(),
+                    textPasajeros.getText(),
+                    TxtEslora.getText(),
+                    TxtManga.getText()
+            });
+
+        }
+
+    }
 
 
 
@@ -50,6 +80,9 @@ public class AgregarVehiculo {
             }
 
         });
+
+
+
       /*  listarButton.addActionListener(new ActionListener() {
            @Override
             public void actionPerformed(ActionEvent e) {
@@ -66,6 +99,12 @@ public class AgregarVehiculo {
                 System.out.println("Entro a avion");
                 agregarButton.enable();
 */
+        agregarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
+        });
+    }
         }
 
